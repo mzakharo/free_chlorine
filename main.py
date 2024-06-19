@@ -3,14 +3,14 @@ import paho.mqtt.client as paho
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import sys
-import tensorflow as tf
+import tflite_runtime.interpreter as tflite
 import numpy as np
 
 broker = 'nas.local'
 fmodel = 'model_fc.tflite'
 
 
-interpreter = tf.lite.Interpreter(model_path=fmodel)
+interpreter = tflite.Interpreter(model_path=fmodel)
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 interpreter.allocate_tensors()
