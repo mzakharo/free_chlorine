@@ -6,7 +6,7 @@ import sys
 import tflite_runtime.interpreter as tflite
 import numpy as np
 
-broker = 'nas.local'
+broker = 'nas.home.arpa'
 fmodel = 'model_fc.tflite'
 
 
